@@ -1,8 +1,29 @@
-import React from "react";
-import gsap from "gsap";
+import React, { useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import Lottie from "lottie-web";
+import ARROW from "../public/arrow.json";
 function Hero({ styles }) {
+  const ProductName = useRef(null);
+  const ArrowContainer = useRef(null);
+  useEffect(() => {
+    const rotatedText = ProductName.current;
+    rotatedText.innerHTML = rotatedText.textContent.replace(
+      /\S/g,
+      '<span class="rotatedSpan">$&</span>'
+    );
+    const rotatedSpans = document.querySelectorAll(".rotatedSpan");
+    rotatedSpans.forEach((letter, i) => {
+      letter.style.transform = "rotate(" + i * 25 + "deg)";
+    });
+    Lottie.loadAnimation({
+      container: ArrowContainer.current,
+      renderer: "svg",
+      loop: true,
+      autoplay: true,
+      animationData: ARROW,
+    });
+  }, []);
   return (
     <div className={styles._hero}>
       <header>
@@ -13,35 +34,31 @@ function Hero({ styles }) {
           <ul>
             <li>
               <Link href="#">
-                <a>
-                  <li>home</li>
-                </a>
+                <a>home</a>
               </Link>
             </li>
             <li>
               <Link href="#">
-                <a>
-                  <li>About</li>
-                </a>
+                <a>About</a>
               </Link>
             </li>
             <li>
               <Link href="#">
-                <a>
-                  <li>Shop</li>
-                </a>
+                <a>Shop</a>
               </Link>
             </li>
             <li>
               <Link href="#">
-                <a>
-                  <li>Testimonial</li>
-                </a>
+                <a>Testimonial</a>
               </Link>
             </li>
           </ul>
         </nav>
       </header>
+      <div ref={ProductName} className={styles.Product_Name}>
+        {" "}
+        Jorge Di Profumo{" "}
+      </div>
       <div className={styles._hero_child}>
         <div>
           <Image src="/prod.png" width={400} height={400} alt="" />
@@ -64,6 +81,9 @@ function Hero({ styles }) {
             </p>
           </div>
         </div>
+      </div>
+      <div className={styles._hero_orderbtn}>
+        <span ref={ArrowContainer}></span>
       </div>
     </div>
   );

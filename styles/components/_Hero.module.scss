@@ -2,20 +2,21 @@
   width: $per;
   height: $vh;
   background: #f1ede5;
+  background-repeat: no-repeat;
   display: $f;
   justify-content: $c;
   align-items: $c;
   flex-direction: $cl;
   position: $re;
-  &::before {
+  &::after {
     content: "";
     position: $ab;
-    width: 15%;
-    height: 40vh;
-    background: #000;
-    left: 0;
-    top: 50%;
-    clip-path: circle(50% at 0% 50%);
+    background-image: url("/bg_flowers.png");
+    background-position: $c;
+    background-size: cover;
+    width: $per;
+    height: $per;
+    opacity: 0.08;
   }
   header {
     width: $per;
@@ -24,14 +25,12 @@
     align-items: $c;
     position: $ab;
     top: 0;
-    margin-top: 1.5em;
+    margin-top: 1em;
     nav {
       width: 90%;
       display: $f;
       justify-content: $sb;
       align-items: $c;
-      font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial,
-        sans-serif;
       ul {
         display: $f;
         justify-content: $sp;
@@ -39,8 +38,40 @@
           margin-right: 2em;
           list-style: $n;
           letter-spacing: 0.2em;
+          font-family: $font;
+          font-weight: $b;
         }
       }
+    }
+  }
+  .Product_Name {
+    position: absolute;
+    user-select: none;
+    pointer-events: none;
+    left: 10%;
+    top: 50%;
+    color: #000;
+    mix-blend-mode: darken;
+    animation: RotatedText 7.5s linear infinite;
+    @keyframes RotatedText {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+    span {
+      display: inline-block;
+      position: absolute;
+      text-transform: uppercase;
+      transform-origin: 0 100px;
+      margin: 0;
+      padding: 0;
+      top: -100px;
+      font-weight: $b;
+      font-family: $font;
+      font-size: 1.3em;
     }
   }
   &_child {
@@ -48,14 +79,17 @@
     display: $f;
     justify-content: $c;
     align-items: $c;
+    z-index: 99;
     &_circle {
       position: $ab;
       background: #000;
       right: 0;
-      top: 48%;
+      top: 40%;
       text-align: $c;
       color: #fff;
       width: 20%;
+      font-family: $font;
+      font-size: .8em;
     }
     img {
       object-fit: cover;
@@ -64,16 +98,57 @@
       font-weight: $b;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      font-size: 5em;
-      margin-bottom: 0%;
+      font-size: 6.5em;
+      margin: 0%;
+      font-family: $font;
     }
     p {
       font-weight: $b;
       font-size: 1em;
       margin: 0;
       padding: 0;
+      font-family: $font;
+      font-weight: 500;
+      text-transform: lowercase;
       sup {
         margin-right: 0.3em;
+      }
+    }
+  }
+  &_orderbtn {
+    display: $f;
+    justify-content: $c;
+    align-items: $c;
+    margin: 0 !important;
+    padding: 0 !important;
+    position: $re;
+    top: 5%;
+    span {
+      text-align: $c;
+      display: $f;
+      justify-content: $c;
+      align-items: $c;
+      margin: 0 !important;
+      padding: 0 !important;
+      position: $re;
+      width: 80px;
+      height: 80px;
+      &::before {
+        content: "";
+        position: $ab;
+        border: 0.2em dashed #000;
+        width: 80px;
+        height: 80px;
+        border-radius: $per;
+        animation: RotatedBorder 7.5s linear infinite;
+        @keyframes RotatedBorder {
+          from {
+            transform: rotate(0deg);
+          }
+          to {
+            transform: rotate(360deg);
+          }
+        }
       }
     }
   }

@@ -1,15 +1,20 @@
+@font-face {
+  font-family: "Goldoni";
+  src: url("./fonts/Goldoni-65vo.ttf");
+}
 $f: flex;
 $c: center;
 $cl: column;
 $sp: space-around;
 $sv: space-evenly;
-$sb:space-between;
-$ab:absolute;
-$re:relative;
+$sb: space-between;
+$ab: absolute;
+$re: relative;
 $per: 100%;
 $vh: 100vh;
 $perhelf: 80%;
 $n: none;
-$b:bold;
-$h:hidden;
+$b: bold;
+$h: hidden;
+$font:"Goldoni";
 @import "./components/Hero.module";
