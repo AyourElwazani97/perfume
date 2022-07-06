@@ -93,8 +93,12 @@
       font-family: $font;
       font-size: 0.8em;
     }
-    img {
-      object-fit: cover;
+    &_imageHandler {
+      overflow: $h;
+      img {
+        object-fit: cover;
+        clip-path: inset(50% 0%);
+      }
     }
     h1 {
       font-weight: $b;
@@ -153,6 +157,9 @@
             transform: rotate(360deg);
           }
         }
+      }
+      &:hover::before {
+        animation: $n;
       }
     }
   }

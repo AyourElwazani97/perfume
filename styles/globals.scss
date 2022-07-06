@@ -13,3 +13,10 @@ a {
   text-decoration: none;
 }
 
+.lineChildren {
+  transform: translate(0px, 600px);
+}
+
+.lineParent {
+  overflow: hidden;
+}
