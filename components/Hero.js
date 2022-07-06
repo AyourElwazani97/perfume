@@ -47,7 +47,7 @@ function Hero({ styles }) {
           <Image src="/prod.png" width={400} height={400} alt="" />
         </div>
         <div className={styles._hero_child_circle}>
-          <h2>Let'em follow your smell</h2>
+          <h2>Let&apos;em follow your smell</h2>
         </div>
         <div className={styles._hero_child_content}>
           <div>
