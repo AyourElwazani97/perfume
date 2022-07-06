@@ -1,5 +1,6 @@
 @font-face {
   font-family: "Goldoni";
+  font-display: swap;
   src: url("./fonts/Goldoni-65vo.ttf");
 }
 $f: flex;
@@ -16,5 +17,5 @@ $perhelf: 80%;
 $n: none;
 $b: bold;
 $h: hidden;
-$font:"Goldoni";
+$font:"Goldoni", sans-serif;
 @import "./components/Hero.module";
