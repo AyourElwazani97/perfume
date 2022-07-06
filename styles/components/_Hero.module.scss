@@ -1,0 +1,47 @@
+._hero {
+  width: $per;
+  height: $vh;
+  background: #f1ede5;
+  display: $f;
+  justify-content: $c;
+  align-items: $c;
+  flex-direction: $cl;
+  header {
+    width: $per;
+    display: $f;
+    justify-content: $sp;
+    align-items: $c;
+    position: $ab;
+    top: 0;
+    margin-top: 1.5em;
+    nav {
+      width: 90%;
+      display: $f;
+      justify-content: $sb;
+      align-items: $c;
+      font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial,
+        sans-serif;
+      ul {
+        display: $f;
+        justify-content: $sp;
+        li {
+          margin-right: 2em;
+          list-style: $n;
+          letter-spacing: 0.2em;
+        }
+      }
+    }
+  }
+  &_child {
+    width: $perhelf;
+    display: $f;
+    justify-content: $c;
+    align-items: $c;
+    h1 {
+        font-weight: $b;
+        letter-spacing: .1em;
+        text-transform: uppercase;
+        font-size: 5em;
+    }
+  }
+}

@@ -1,6 +1,14 @@
 $f: flex;
 $c: center;
 $cl: column;
+$sp: space-around;
+$sv: space-evenly;
+$sb:space-between;
+$ab:absolute;
+$re:relative;
 $per: 100%;
 $vh: 100vh;
+$perhelf: 80%;
+$n: none;
+$b:bold;
 @import "./components/Hero.module";
