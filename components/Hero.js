@@ -5,14 +5,17 @@ import Lottie from "lottie-web";
 import ARROW from "../public/arrow.json";
 import gsap, { Sine } from "gsap";
 import SplitText from "../utils/Split3.min";
+import ScrollToPlugin from "gsap/dist/ScrollToPlugin";
 function Hero({ styles }) {
-  const ProductName = useRef(null);
+  const productName = useRef(null);
   const ArrowContainer = useRef(null);
   const heroTitle = useRef(null);
+  const hero_child_circle = useRef(null);
+  const hero_orderbtn = useRef(null);
   const f = useRef(null);
-  gsap.registerPlugin(SplitText);
+  gsap.registerPlugin(SplitText, ScrollToPlugin);
   useEffect(() => {
-    const rotatedText = ProductName.current;
+    const rotatedText = productName.current;
     rotatedText.innerHTML = rotatedText.textContent.replace(
       /\S/g,
       '<span class="rotatedSpan">$&</span>'
@@ -83,6 +86,22 @@ function Hero({ styles }) {
           ease: Sine.easeOut,
         },
         0.5
+      )
+      .to(hero_child_circle.current, {
+        opacity: 1,
+        width: "25%",
+        background: "#000",
+        duration: 1.5,
+      })
+      .fromTo(
+        hero_orderbtn.current,
+        { opacity: 0 },
+        { opacity: 1, duration: 1, ease: Sine.easeOut }
+      )
+      .fromTo(
+        productName.current,
+        { opacity: 0 },
+        { opacity: 1, duration: 1, ease: Sine.easeOut }
       );
   }, []);
   useEffect(() => {
@@ -98,7 +117,9 @@ function Hero({ styles }) {
       Lottie.destroy();
     };
   }, []);
-
+  const ToAbout = () => {
+    return gsap.to(window, { duration: 2, scrollTo: "#about" });
+  };
   return (
     <div className={styles._hero}>
       <header>
@@ -130,7 +151,7 @@ function Hero({ styles }) {
           </ul>
         </nav>
       </header>
-      <div ref={ProductName} className={styles.Product_Name}>
+      <div ref={productName} className={styles.Product_Name}>
         {" "}
         Jorge Di Profumo{" "}
       </div>
@@ -144,7 +165,7 @@ function Hero({ styles }) {
             alt=""
           />
         </div>
-        <div className={styles._hero_child_circle}>
+        <div ref={hero_child_circle} className={styles._hero_child_circle}>
           <h2>Let Them Follow Your Smell</h2>
         </div>
         <div className={styles._hero_child_content}>
@@ -163,7 +184,11 @@ function Hero({ styles }) {
           </div>
         </div>
       </div>
-      <div className={styles._hero_orderbtn}>
+      <div
+        className={styles._hero_orderbtn}
+        ref={hero_orderbtn}
+        onClick={ToAbout}
+      >
         <span ref={ArrowContainer}></span>
       </div>
     </div>

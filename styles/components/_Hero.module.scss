@@ -84,14 +84,14 @@
     z-index: 99;
     &_circle {
       position: $ab;
-      background: #000;
       right: 0;
       top: 38%;
       text-align: $c;
       color: #fff;
-      width: 25%;
       font-family: $font;
       font-size: 0.8em;
+      opacity: 0;
+      overflow: $h;
     }
     &_imageHandler {
       overflow: $h;
