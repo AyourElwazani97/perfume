@@ -3,9 +3,12 @@ import Link from "next/link";
 import Image from "next/image";
 import Lottie from "lottie-web";
 import ARROW from "../public/arrow.json";
+import gsap from "gsap";
+import SplitText from "../utils/Split3.min";
 function Hero({ styles }) {
   const ProductName = useRef(null);
   const ArrowContainer = useRef(null);
+  gsap.registerPlugin(SplitText);
   useEffect(() => {
     const rotatedText = ProductName.current;
     rotatedText.innerHTML = rotatedText.textContent.replace(
@@ -16,7 +19,6 @@ function Hero({ styles }) {
     rotatedSpans.forEach((letter, i) => {
       letter.style.transform = "rotate(" + i * 25 + "deg)";
     });
-    
   }, []);
   useEffect(() => {
     Lottie.loadAnimation({
@@ -26,11 +28,11 @@ function Hero({ styles }) {
       autoplay: true,
       animationData: ARROW,
     });
-    Lottie.setSpeed(.5);
+    Lottie.setSpeed(0.5);
     return () => {
       Lottie.destroy();
     };
-  },[])
+  }, []);
   return (
     <div className={styles._hero}>
       <header>
@@ -45,17 +47,17 @@ function Hero({ styles }) {
               </Link>
             </li>
             <li>
-              <Link href="#">
+              <Link href="#About">
                 <a>About</a>
               </Link>
             </li>
             <li>
-              <Link href="#">
+              <Link href="#Shop">
                 <a>Shop</a>
               </Link>
             </li>
             <li>
-              <Link href="#">
+              <Link href="#Testimonial">
                 <a>Testimonial</a>
               </Link>
             </li>
