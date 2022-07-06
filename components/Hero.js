@@ -46,6 +46,9 @@ function Hero({ styles }) {
         <div>
           <Image src="/prod.png" width={400} height={400} alt="" />
         </div>
+        <div className={styles._hero_child_circle}>
+          <h2>Let'em follow your smell</h2>
+        </div>
         <div className={styles._hero_child_content}>
           <div>
             <h1>
@@ -56,7 +59,8 @@ function Hero({ styles }) {
           </div>
           <div>
             <p>
-              lorem zedjkze dzeijdzejd
+              <sup>ــــــــــــــــــــــــ</sup>Smell is a word, Jorge Di
+              Profumo is literature.
             </p>
           </div>
         </div>

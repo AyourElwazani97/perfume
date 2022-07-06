@@ -6,6 +6,17 @@
   justify-content: $c;
   align-items: $c;
   flex-direction: $cl;
+  position: $re;
+  &::before {
+    content: "";
+    position: $ab;
+    width: 15%;
+    height: 40vh;
+    background: #000;
+    left: 0;
+    top: 50%;
+    clip-path: circle(50% at 0% 50%);
+  }
   header {
     width: $per;
     display: $f;
@@ -37,11 +48,33 @@
     display: $f;
     justify-content: $c;
     align-items: $c;
+    &_circle {
+      position: $ab;
+      background: #000;
+      right: 0;
+      top: 48%;
+      text-align: $c;
+      color: #fff;
+      width: 20%;
+    }
+    img {
+      object-fit: cover;
+    }
     h1 {
-        font-weight: $b;
-        letter-spacing: .1em;
-        text-transform: uppercase;
-        font-size: 5em;
+      font-weight: $b;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-size: 5em;
+      margin-bottom: 0%;
+    }
+    p {
+      font-weight: $b;
+      font-size: 1em;
+      margin: 0;
+      padding: 0;
+      sup {
+        margin-right: 0.3em;
+      }
     }
   }
 }
