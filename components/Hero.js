@@ -16,6 +16,9 @@ function Hero({ styles }) {
     rotatedSpans.forEach((letter, i) => {
       letter.style.transform = "rotate(" + i * 25 + "deg)";
     });
+    
+  }, []);
+  useEffect(() => {
     Lottie.loadAnimation({
       container: ArrowContainer.current,
       renderer: "svg",
@@ -23,7 +26,11 @@ function Hero({ styles }) {
       autoplay: true,
       animationData: ARROW,
     });
-  }, []);
+    Lottie.setSpeed(.5);
+    return () => {
+      Lottie.destroy();
+    };
+  },[])
   return (
     <div className={styles._hero}>
       <header>
