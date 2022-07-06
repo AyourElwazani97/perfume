@@ -35,3 +35,20 @@ a {
 ::-webkit-scrollbar-thumb {
   background: #000;
 }
+
+//custom cursor
+
+#customCursor {
+  z-index: calc(9999 * 99999);
+  position: fixed;
+  height: 50px;
+  width: 50px;
+  border-radius: 100%;
+  background: transparent;
+  border: .2em solid #000;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: 300ms ease-out;
+  font-weight: bold;
+  text-align: center;
+}
