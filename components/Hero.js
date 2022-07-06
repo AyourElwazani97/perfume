@@ -94,12 +94,12 @@ function Hero({ styles }) {
         duration: 1.5,
       })
       .fromTo(
-        hero_orderbtn.current,
+        productName.current,
         { opacity: 0 },
         { opacity: 1, duration: 1, ease: Sine.easeOut }
       )
       .fromTo(
-        productName.current,
+        hero_orderbtn.current,
         { opacity: 0 },
         { opacity: 1, duration: 1, ease: Sine.easeOut }
       );
