@@ -1,0 +1,17 @@
+._about {
+  width: $per;
+  height: $vh;
+  display: $f;
+  justify-content: $c;
+  align-items: $c;
+  flex-direction: $cl;
+  h1 {
+    font-weight: $b;
+    font-family: $font;
+    font-size: 5em;
+    margin: 0;
+  }
+  &_child {
+    width: $perhelf;
+  }
+}

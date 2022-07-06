@@ -1,6 +1,7 @@
+import styles from "../styles/Home.module.scss";
 import Head from "next/head";
 import Hero from "../components/Hero";
-import styles from "../styles/Home.module.scss";
+import About from "../components/About";
 export default function Home() {
   return (
     <div className={styles.container}>
@@ -10,6 +11,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Hero styles={styles} />
+      <About styles={styles} />
     </div>
   );
 }

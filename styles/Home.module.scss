@@ -17,5 +17,6 @@ $perhelf: 80%;
 $n: none;
 $b: bold;
 $h: hidden;
-$font:"Goldoni", sans-serif;
+$font: "Goldoni", sans-serif;
 @import "./components/Hero.module";
+@import "./components/About.module";
