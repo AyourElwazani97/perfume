@@ -41,14 +41,14 @@ a {
 #customCursor {
   z-index: calc(9999 * 99999);
   position: fixed;
-  height: 50px;
-  width: 50px;
+  height: 20px;
+  width: 20px;
   border-radius: 100%;
   background: transparent;
-  border: .2em solid #000;
+  border: 0.2em solid #000;
   pointer-events: none;
   transform: translate(-50%, -50%);
-  transition: 300ms ease-out;
+  transition: 500ms ease-out;
   font-weight: bold;
   text-align: center;
 }
