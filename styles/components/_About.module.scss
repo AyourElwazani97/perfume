@@ -5,6 +5,12 @@
   justify-content: $c;
   align-items: $c;
   flex-direction: $cl;
+  background-image: url("/4347464.jpg");
+  background-position: $c;
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: $font !important;
+
   h1 {
     font-weight: $b;
     font-family: $font;
@@ -13,6 +19,43 @@
   }
   &_child {
     width: $perhelf;
-    position: relative;
+    position: $re;
+    display: $f;
+    justify-content: $c;
+    align-items: $c;
+    &_imageHandler {
+      position: $re;
+      img {
+        object-fit: cover;
+      }
+    }
+    &_content {
+      width: 40%;
+      margin-left: 3%;
+      p {
+        font-weight: 600;
+        line-height: 2;
+      }
+      button {
+        width: 200px;
+        border-radius: 5px;
+        color: #fff;
+        background: #000;
+        border: $n;
+        outline: $n;
+        padding: 1em;
+        box-shadow: 0 1em 1em 0 #000;
+        cursor: pointer;
+        transition: transform 500ms ease-out;
+        font-family: $font;
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+      &_stars {
+        display: $f;
+        margin-top: 1.5em;
+      }
+    }
   }
 }
