@@ -1,2 +1,44 @@
 ._testimonial {
+  width: $per;
+  height: $vh;
+  background: #f1ede5;
+  background-repeat: no-repeat;
+  display: $f;
+  justify-content: $c;
+  align-items: $c;
+  flex-direction: $cl;
+  position: $re;
+  &::after {
+    content: "";
+    position: $ab;
+    background-image: url("/bg_flowers.png");
+    background-position: $c;
+    background-size: cover;
+    width: $per;
+    height: $per;
+    opacity: 0.09;
+  }
+
+  h1 {
+    font-weight: $b;
+    font-family: $font;
+    font-size: 5em;
+    margin: 0;
+  }
+  &_child {
+    width: $perhelf;
+    position: $re;
+    display: $f;
+    justify-content: $c;
+    align-items: $c;
+    background-image: url("/bgSlide.png");
+    background-position: $c;
+    background-size: contain;
+    background-repeat: no-repeat;
+    &_whitePapper {
+      width: 300px;
+      height: 300px;
+      background: #000;
+    }
+  }
 }
