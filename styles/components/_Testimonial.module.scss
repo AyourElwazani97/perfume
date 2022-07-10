@@ -1,7 +1,7 @@
 ._testimonial {
   width: $per;
   height: $vh;
-  background: #000;
+  background: #1f2022;
   background-repeat: no-repeat;
   display: $f;
   justify-content: $c;
@@ -16,7 +16,7 @@
     background-size: cover;
     width: $per;
     height: $per;
-    opacity: 9;
+    opacity: 0.7;
   }
 
   h1 {
@@ -39,9 +39,34 @@
     height: 80vh;
     &_whitePapper {
       width: calc($per / 2.5);
-      height: 300px;
+      padding: 1.5em;
       background: #fff;
       z-index: 9;
+      display: $f;
+      justify-content: $c;
+      align-items: $c;
+      flex-direction: $cl;
+      text-align: $c;
+      border-radius: 20px;
+      h4 {
+        font-weight: $b;
+        font-family: $font;
+      }
+      p {
+        font-family: $ro !important;
+      }
+      img {
+        border-radius: $per;
+        object-fit: cover;
+      }
+      &_next_Prev {
+        width: $per;
+        display: $f;
+        justify-content: $sb;
+        span {
+          cursor: pointer;
+        }
+      }
     }
   }
 }
